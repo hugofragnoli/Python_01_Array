@@ -8,4 +8,14 @@ import os
 # numpy car image est un array de nombres 3d pour rgb.
 
 def ft_load(path: str) -> array:
-    
+    try:
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"No such file or directory: {path}")
+        extension = os.path.splitext(path)
+        if extension.lower() not in [".jpg", ".jpeg"]:
+            raise ValueError("Unsupported File format. use JPG or JPEG")
+        img = Image.open(path)
+        img_array = np.array(img)
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
