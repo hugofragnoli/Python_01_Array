@@ -1,6 +1,5 @@
 from PIL import Image
 from numpy import array
-import matplotlib.pyplot as plt
 import numpy as np
 import os
 
@@ -10,9 +9,9 @@ import os
 # matplotlib biblio de dessin Python. Transforme des données
 # numériques en une fenetre visuelle avec axes gradés
 
+
 def ft_load(path: str) -> array:
     try:
-        path = "animal.jpeg"
         if not os.path.exists(path):
             raise FileNotFoundError(f"No such file or directory: {path}")
         _, extension = os.path.splitext(path)
@@ -28,9 +27,3 @@ def ft_load(path: str) -> array:
     except Exception as e:
         print(f"Error: {e}")
         return None
-
-def display_image_info(path: str):
-    img_array = ft_load(path)
-
-    if img_array is not None:
-        print(img_array)
