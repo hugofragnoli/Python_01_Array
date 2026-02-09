@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from numpy import array
 
+
 def ft_invert(array) -> array:
     """Inverts the color of the image received."""
     # Opérateur autorisés : =, +, -, *
@@ -65,7 +66,8 @@ def ft_grey(array) -> array:
     res[:, :, 0] = grey_channel
     res[:, :, 1] = grey_channel
     res[:, :, 2] = grey_channel
-    # cmap = gray force a utiliser un echelle de couleurs allant du noir pur au blanc pur
+    # cmap = gray force a utiliser un echelle de
+    # couleurs allant du noir pur au blanc pur
     plt.imshow(res, cmap="gray")
     plt.title("Grey filter")
     plt.show()

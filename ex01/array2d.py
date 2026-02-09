@@ -2,7 +2,17 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """
+    Découpe une liste 2D (slicing) et affiche ses dimensions avant et après.
 
+    Args:
+        family (list): La liste 2D d'origine.
+        start (int): L'index de début du découpage.
+        end (int): L'index de fin du découpage.
+
+    Returns:
+        list: La partie de la liste découpée.
+    """
     np_family = np.array(family)
     print(f"My shape is : {np_family.shape}")
 

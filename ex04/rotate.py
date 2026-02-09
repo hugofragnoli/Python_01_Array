@@ -5,6 +5,9 @@ import numpy as np
 
 
 def ft_rotate(path: str) -> array:
+    """Take a path to an image, prints its rgb array, zoom on it,
+    prints the new RGB ARRAY, rotate, display the image
+    zoomed and rotate and return it"""
     img = ft_load(path)
 
     zoomed = img[100:500, 450:850, 0:1]

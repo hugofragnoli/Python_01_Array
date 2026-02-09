@@ -4,7 +4,6 @@ from pimp_image import ft_green
 from pimp_image import ft_red
 from pimp_image import ft_blue
 from pimp_image import ft_grey
-from numpy import array
 
 array = ft_load("landscape.jpg")
 

@@ -4,6 +4,9 @@ from numpy import array
 
 
 def ft_zoom(path: str) -> array:
+    """Take a path to an image, prints its rgb array, zoom on it,
+    prints the new RGB ARRAY
+    , display the image zoomed and return the zoome img"""
     # ici on dit :
     # Prends les pixels a partir de la ligne 100
     # jusqua ligne 500 (hauteur)

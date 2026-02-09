@@ -11,6 +11,8 @@ import os
 
 
 def ft_load(path: str) -> array:
+    """Take a path to an image, prints its shape and return
+    its RGB array"""
     try:
         if not os.path.exists(path):
             raise FileNotFoundError(f"No such file or directory: {path}")

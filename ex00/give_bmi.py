@@ -8,7 +8,16 @@ def give_bmi(
     height: list[int | float],
     weight: list[int | float]
 ) -> list[int | float]:
+    """
+    Calcule l'IMC pour chaque paire de taille et poids fournie.
 
+    Args:
+        height (list): Liste de tailles en mètres.
+        weight (list): Liste de poids en kilogrammes.
+
+    Returns:
+        list: Une liste d'IMC calculés. Renvoie une liste vide en cas d'erreur.
+    """
     try:
         # On transforme les listes en tableaux NumPy
         np_height = np.array(height)
@@ -29,6 +38,16 @@ def give_bmi(
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """
+    Compare chaque valeur d'IMC à un seuil limite.
+
+    Args:
+        bmi (list): Liste des IMC à vérifier.
+        limit (int): Le seuil à ne pas dépasser.
+
+    Returns:
+        list: Liste de booléens (True si IMC > limite, False sinon).
+    """
     # On transforme la liste d'IMC en tableau NumPy
     np_bmi = np.array(bmi)
     # NumPy compare chaque élément du tableau à la limite d'un coup
