@@ -14,7 +14,7 @@ def ft_zoom(path: str) -> array:
         if img is None:
             return None
         print(img)
-        zoomed_img = img[100:800, 150:800, :1]
+        zoomed_img = img[100:500, 450:850, 0:1]
 
         print(f"New shape after slicing: {zoomed_img.shape}")
         print(zoomed_img)
