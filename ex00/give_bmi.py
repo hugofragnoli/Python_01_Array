@@ -33,5 +33,5 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     np_bmi = np.array(bmi)
     # NumPy compare chaque élément du tableau à la limite d'un coup
     res = np_bmi > limit
-    # On convertit le tableau de booléens en liste standard
+    # On convertit le tableau de booléens en liste 
     return res.tolist()
