@@ -7,6 +7,7 @@ import os
 # os = pour verif si fichier bien la avant douvrir
 # numpy car image est un array de nombres 3d pour rgb.
 
+
 def ft_load(path: str) -> array:
     try:
         if not os.path.exists(path):
