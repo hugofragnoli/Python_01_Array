@@ -11,11 +11,16 @@ def ft_load(path: str) -> array:
     try:
         if not os.path.exists(path):
             raise FileNotFoundError(f"No such file or directory: {path}")
-        extension = os.path.splitext(path)
+        _, extension = os.path.splitext(path)
         if extension.lower() not in [".jpg", ".jpeg"]:
             raise ValueError("Unsupported File format. use JPG or JPEG")
         img = Image.open(path)
         img_array = np.array(img)
+
+        print(f"The shape of image is: {img_array.shape}")
+
+        return img_array
+
     except Exception as e:
         print(f"Error: {e}")
         return None
