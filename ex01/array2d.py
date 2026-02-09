@@ -7,6 +7,7 @@ def slice_me(family: list, start: int, end: int) -> list:
         end = start
         start = tmp
     np_family = np.array(family)
+    np_family = np.reshape(np_family, start, end)
 
-    res = np_family.tolist()
+    return np_family.tolist()
     
