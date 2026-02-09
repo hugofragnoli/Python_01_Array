@@ -20,14 +20,15 @@ def give_bmi(height: list[int | float], weight: list[int |float]) -> list[int | 
         bmi_array = np_weight / (np_height ** 2)
         return bmi_array.tolist()
 
-    except AssertionError as e:
-        print(f"AssertionError: {e}")
+    except (AssertionError, ValueError) as e:
+       print(f"{type(e).__name__}: {e}")
+       return []
 
 
-def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+# def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
