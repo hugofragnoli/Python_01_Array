@@ -48,7 +48,7 @@ def ft_blue(array) -> array:
     res[:, :, 0] = res[:, :, 0] * 0
     res[:, :, 1] = res[:, :, 1] * 0
     plt.imshow(res)
-    plt.title("Blue")
+    plt.title("Blue filter")
     plt.show()
 
     return res
@@ -67,5 +67,5 @@ def ft_grey(array) -> array:
     res[:, :, 2] = grey_channel
     # cmap = gray force a utiliser un echelle de couleurs allant du noir pur au blanc pur
     plt.imshow(res, cmap="gray")
-    plt.title("Grey")
+    plt.title("Grey filter")
     plt.show()
