@@ -28,13 +28,33 @@ def ft_red(array) -> array:
     return res
 
 
+def ft_green(array) -> array:
+    """Applies a green filter to the image """
+    # on doit selectionner les canaux verts et bleus
+    # et modif leur values
+    res = array.copy()
+    res[:, :, 0] = res[:, :, 0] * 0
+    res[:, :, 2] = res[:, :, 2] * 0
+    plt.imshow(res)
+    plt.title("Green filter")
+    plt.show()
 
-# def ft_green(path: str) -> array:
+    return res
 
 
 
+def ft_blue(array) -> array:
+    """Applies a blue filter to the image """
+    # on doit selectionner les canaux verts et bleus
+    # et modif leur values
+    res = array.copy()
+    res[:, :, 0] = res[:, :, 0] * 0
+    res[:, :, 1] = res[:, :, 1] * 0
+    plt.imshow(res)
+    plt.title("Blue")
+    plt.show()
 
-# def ft_blue(path: str) -> array:
+    return res
 
 
 
