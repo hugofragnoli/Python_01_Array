@@ -4,7 +4,10 @@
 import numpy as np
 
 
-def give_bmi(height: list[int | float], weight: list[int |float]) -> list[int | float]:
+def give_bmi(
+    height: list[int | float],
+    weight: list[int | float]
+) -> list[int | float]:
 
     try:
         # On transforme les listes en tableaux NumPy
@@ -21,14 +24,14 @@ def give_bmi(height: list[int | float], weight: list[int |float]) -> list[int | 
         return bmi_array.tolist()
 
     except (AssertionError, ValueError) as e:
-       print(f"{type(e).__name__}: {e}")
-       return []
+        print(f"{type(e).__name__}: {e}")
+        return []
 
 
-# def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-
-
-
-
-# if __name__ == "__main__":
-#     main()
+def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    # On transforme la liste d'IMC en tableau NumPy
+    np_bmi = np.array(bmi)
+    # NumPy compare chaque élément du tableau à la limite d'un coup
+    res = np_bmi > limit
+    # On convertit le tableau de booléens en liste standard
+    return res.tolist()
