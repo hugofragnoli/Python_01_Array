@@ -11,8 +11,25 @@ import os
 
 
 def ft_load(path: str) -> array:
-    """Take a path to an image, and return
-    its RGB array"""
+    """
+    Charge une image à partir d'un chemin et retourne
+    son contenu sous forme de tableau NumPy (RGB).
+
+    Cette fonction effectue les vérifications suivantes :
+    1. Existence du fichier sur le disque.
+    2. Support du format (uniquement .jpg et .jpeg).
+
+    Args:
+        path (str): Le chemin vers le fichier image.
+
+    Returns:
+        np.array:Un tableau NumPy représentant l'img (Hauteur, Largeur, Canaux)
+                  Retourne None en cas d'erreur.
+
+    Raises:
+        FileNotFoundError: Si le chemin spécifié n'existe pas.
+        ValueError: Si le format de fichier n'est pas JPG ou JPEG.
+    """
     try:
         if not os.path.exists(path):
             raise FileNotFoundError(f"No such file or directory: {path}")

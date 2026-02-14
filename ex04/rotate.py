@@ -5,9 +5,19 @@ import numpy as np
 
 
 def ft_rotate(path: str) -> array:
-    """Take a path to an image, prints its rgb array, zoom on it,
-    prints the new RGB ARRAY, rotate, display the image
-    zoomed and rotate and return it"""
+    """
+    Charge une image, effectue un zoom (slicing) puis une rotation manuelle
+    par transposition de matrice.
+
+    La rotation est effectuée en inversant les indices des lignes et des col
+    pour transformer les lignes de l'img originale en col de l'image rendue
+
+    Args:
+        path (str): Le chemin vers le fichier image.
+
+    Returns:
+        np.array: Le tableau NumPy de l'image zoomée et pivotée (transposée).
+    """
     img = ft_load(path)
 
     zoomed = img[100:500, 450:850, 0:1]

@@ -3,7 +3,18 @@ from numpy import array
 
 
 def ft_invert(array) -> array:
-    """Inverts the color of the image received."""
+    """
+    Inverse les couleurs de l'image (effet négatif).
+
+    L'inversion est calculée en soustrayant la valeur de chaque pixel à 255
+    (la valeur maximale pour un canal 8-bits).
+
+    Args:
+        array (array): Le tableau NumPy de l'image originale.
+
+    Returns:
+        array: L'image avec les couleurs inversées.
+    """
     # Opérateur autorisés : =, +, -, *
     # Formule : 255 - couleur
     res = 255 - array
@@ -14,7 +25,17 @@ def ft_invert(array) -> array:
 
 
 def ft_red(array) -> array:
-    """Applies a red filter to the image """
+    """
+    Applique un filtre rouge en isolant le canal G.
+
+    Met à zéro les canaux Vert (indice 1) et Bleu (indice 2).
+
+    Args:
+        array (array): Le tableau NumPy de l'image originale.
+
+    Returns:
+        array: L'image filtrée en rouge.
+    """
     # on doit selectionner les canaux verts et bleus
     # et modif leur values
     res = array.copy()
@@ -28,7 +49,17 @@ def ft_red(array) -> array:
 
 
 def ft_green(array) -> array:
-    """Applies a green filter to the image """
+    """
+    Applique un filtre vert en isolant le canal G.
+
+    Met à zéro les canaux Rouge (indice 0) et Bleu (indice 2).
+
+    Args:
+        array (array): Le tableau NumPy de l'image originale.
+
+    Returns:
+        array: L'image filtrée en vert.
+    """
     # on doit selectionner les canaux rouge et bleus
     # et modif leur values
     res = array.copy()
@@ -42,7 +73,17 @@ def ft_green(array) -> array:
 
 
 def ft_blue(array) -> array:
-    """Applies a blue filter to the image """
+    """
+    Applique un filtre bleu en isolant le canal B.
+
+    Met à zéro les canaux Rouge (indice 0) et Vert (indice 1).
+
+    Args:
+        array (array): Le tableau NumPy de l'image originale.
+
+    Returns:
+        array: L'image filtrée en bleu.
+    """
     # on doit selectionner les canaux rouges et verts
     # et modif leur values
     res = array.copy()
@@ -56,7 +97,18 @@ def ft_blue(array) -> array:
 
 
 def ft_grey(array) -> array:
-    """Applies a grey filter to the image """
+    """
+    Applique un filtre gris en calculant la moyenne des canaux RGB.
+
+    Chaque canal de l'image résultante reçoit la moyenne arithmétique
+    des trois canaux originaux, transformant la couleur en intensité lumineuse.
+
+    Args:
+        array (array): Le tableau NumPy de l'image originale.
+
+    Returns:
+        array: L'image en niveaux de gris (conservant sa structure 3D).
+    """
     # on divise la somme des canaux par 3 poura voir la moyenne
     # attention : rester en 3d pour la shape
     res = array.copy()

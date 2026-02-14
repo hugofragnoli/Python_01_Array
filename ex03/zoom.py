@@ -4,14 +4,26 @@ from numpy import array
 
 
 def ft_zoom(path: str) -> array:
-    """Take a path to an image, prints its rgb array, zoom on it,
-    prints the new RGB ARRAY
-    , display the image zoomed and return the zoome img"""
-    # ici on dit :
-    # Prends les pixels a partir de la ligne 100
-    # jusqua ligne 500 (hauteur)
-    # Prends de colonne 400 a 800 (largeur)
-    # :1 on dit a Python de garder 1 canal pour le gris
+    """
+    Charge une image, effectue un zoom par recadrage (slicing), convertit
+    en niveaux de gris et affiche le résultat.
+
+    La fonction utilise le slicing de tableau NumPy pour isoler une zone
+    spécifique de l'image et ne conserver qu'un seul canal de couleur.
+
+    Args:
+        path (str): Le chemin vers l'image à traiter.
+
+    Returns:
+        np.array: Le tableau NumPy de l'image zoomée et grise.
+                  Retourne None en cas d'erreur.
+
+    Comportement du Slicing [100:500, 450:850, 0:1] :
+        - 100:500 : Sélectionne les lignes de 100 à 500 (axe vertical/hauteur).
+        - 450:850 : Sélectionne les colonnes de 450 à 850 (axe hor/lar).
+        - 0:1     : Ne garde que le premier canal (Rouge), ce qui, combiné
+                    au cmap="gray", permet un affichage en niveaux de gris.
+    """
     try:
         img = ft_load(path)
         if img is None:
